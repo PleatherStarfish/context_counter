@@ -14,7 +14,9 @@ const useStyles = makeStyles({
   }
 });
 
-export const CountContext = createContext(0);
+export const CountContext = createContext();
+export const CountProvider = CountContext.Provider;
+export const CountConsumer = CountContext.Consumer;
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -22,12 +24,13 @@ const App = () => {
 
   return (
     <div className="App">
-      <CountContext.Provider value={[count, setCount]}>
+      <CountProvider value={[count, setCount]}>
         <Typography variant="h1" className={classes.root}>
           Context Counter
         </Typography>
+
         <Counter />
-      </CountContext.Provider>
+      </CountProvider>
     </div>
   );
 };

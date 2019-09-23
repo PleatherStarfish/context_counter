@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 });
 
 const Counter = () => {
-  const [count] = useContext(CountContext);
+  const count = useContext(CountContext);
   const classes = useStyles();
   return (
     <>
